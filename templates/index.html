@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>BMI Calculator</title>
+    <link href="\static\styles\styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <form action="/calculate" method="POST">
+        <label for="birth_year">Enter the Height and Weight:</label><br>
+        <input type="number" id="weight" name="Weight(lbs)" placeholder="Weight(lbs)" required><br>
+        <input type="number" id="height" name="Height(in)" placeholder="Height(in)" required><br>
+        <button type="submit">Calculate BMI</button>
+    </form>
+
+    {% if BMI is not none %}
+        <h2>BMI is: {{ BMI }}</h2>
+    {% endif %}
+
+    {% if error is not none %}
+        <h2 style="color: red;">{{ error }}</h2>
+    {% endif %}
+</body>
+</html>
