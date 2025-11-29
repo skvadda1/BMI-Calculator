@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <link href="\static\styles\styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <h1>BMI Calculator</h1>
+
+    <form action="/calculate" method="POST">
+        <label>Weight (lbs):</label>
+        <input type="text" name="Weight(lbs)" required>
+
+        <br><br>
+
+        <label>Height (in):</label>
+        <input type="text" name="Height(in)" required>
+
+        <br><br>
+
+        <button type="submit">Calculate BMI</button>
+    </form>
+
+    <hr>
+
+    {% if BMI %}
+        <h2>Your BMI: {{ BMI|round(0) }}</h2>
+    {% endif %}
+
+    {% if message %}
+        <p style="color: green; font-weight: bold;">{{ message }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red; font-weight: bold;">{{ error }}</p>
+    {% endif %}
+
+</body>
+</html>
